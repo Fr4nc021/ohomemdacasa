@@ -1,0 +1,192 @@
+.howItWorks {
+  padding: 6rem 1.5rem;
+  background: #171922;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--primary-blue);
+}
+
+.subtitle {
+  font-size: 18px;
+  color: var(--text-gray);
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stepsContainer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 2rem 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.stepsContainer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.connectingLine {
+  position: absolute;
+  top: 80px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+  z-index: 0;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.stepsContainer.visible .step {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.stepNumber {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.1em;
+}
+
+.iconWrapper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--primary-blue);
+  border: 3px solid var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step:hover .iconWrapper {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(94, 198, 255, 0.5);
+}
+
+.iconWrapper svg {
+  width: 40px;
+  height: 40px;
+  color: #000000;
+}
+
+.stepTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.stepDescription {
+  font-size: 1rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  max-width: 280px;
+}
+
+.logoSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.logoBox {
+  background: transparent;
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+.logoText {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--white);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 968px) {
+  .stepsContainer {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .connectingLine {
+    display: none;
+  }
+
+  .step {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .howItWorks {
+    padding: 4rem 1rem;
+  }
+
+  .step {
+    max-width: 100%;
+  }
+}
+
+
