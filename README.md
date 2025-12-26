@@ -61,16 +61,6 @@ src/
 
 3. Configure o GitHub Pages para servir a pasta `dist`
 
-## 📝 Personalização
-
-### Alterar número do WhatsApp
-
-Edite os números nos componentes `Hero.jsx` e `CTA.jsx`:
-
-```javascript
-const phone = '5511999999999' // Seu número aqui
-```
-
 ### Cores do tema
 
 As cores podem ser personalizadas no arquivo `src/index.css` através das variáveis CSS:
